@@ -77,6 +77,10 @@ import {OnInit} from '@angular/core';
 
 export class AppComponent implements OnInit {
 
+    title = 'Tour of Heroes';
+    heroes: Hero[];
+    selectedHero: Hero;
+
     constructor(private heroService: HeroService) {
     }
 
@@ -85,22 +89,12 @@ export class AppComponent implements OnInit {
     }
 
     getHeroes(): void {
-        this.heroes = this.heroService.getHeroes();
-    };
-
-    name = 'Angular';
-    title = 'Tour of Heroes';
-    heroes: Hero[];
-    selectedHero: Hero;
+        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    }
 
     onSelect(hero: Hero): void {
         this.selectedHero = hero;
-    };
-
-    hero: Hero = {
-        id: 1,
-        name: 'Windstrom'
-    };
+    }
 }
 
 
