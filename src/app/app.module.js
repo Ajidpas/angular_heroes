@@ -40,7 +40,7 @@ AppModule = __decorate([
                     component: dashboard_component_1.DashboardComponent
                 },
                 {
-                    path: 'details/:id',
+                    path: 'detail/:id',
                     component: hero_detail_component_1.HeroDetailComponent
                 }
             ])
